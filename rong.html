@@ -9,6 +9,7 @@
     body {
       font-family: 'Playpen Sans Thai', cursive;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -18,11 +19,50 @@
       text-align: center;
       padding: 20px;
     }
+    p {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    #countdown {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #d32f2f;
+    }
   </style>
 </head>
 <body>
   <div>
-    <p style="font-size: 24px;">เงินก็อยากได้ครับ แต่ผมขี้เกียจ ขออภัยในความไม่สะดวกงับ</p>
+    <p>เงินก็อยากได้ครับ แต่ผมขี้เกียจ ขออภัยในความไม่สะดวกงับ</p>
+    <p>เปิดรับงานช่วง กันยายน 2568</p>
+    <div id="countdown">กำลังโหลด...</div>
   </div>
+
+  <script>
+    // ตั้งวันที่เป้าหมาย (13 กันยายน 2568 เวลา 00:00 น.)
+    const targetDate = new Date('September 13, 2025 00:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById('countdown').innerText = 'เปิดรับงานแล้วครับ!';
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerText =
+        `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+    }
+
+    updateCountdown(); // เรียกครั้งแรกทันที
+    const timerInterval = setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
