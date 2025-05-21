@@ -23,6 +23,14 @@
       font-size: 24px;
       margin: 10px 0;
     }
+    .highlight {
+      background-color: #bbdefb;
+      padding: 8px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: 600;
+      color: #0d47a1;
+    }
     #countdown {
       font-size: 28px;
       font-weight: bold;
@@ -34,12 +42,11 @@
 <body>
   <div>
     <p>เงินก็อยากได้ครับ แต่ผมขี้เกียจ ขออภัยในความไม่สะดวกงับ</p>
-    <p>เปิดรับงานช่วง กันยายน 2568</p>
+    <p class="highlight">เปิดรับงานช่วง กันยายน 2568</p>
     <div id="countdown">กำลังโหลด...</div>
   </div>
 
   <script>
-    // ตั้งวันที่เป้าหมาย (13 กันยายน 2568 เวลา 00:00 น.)
     const targetDate = new Date('September 13, 2025 00:00:00').getTime();
 
     function updateCountdown() {
@@ -61,7 +68,7 @@
         `${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
     }
 
-    updateCountdown(); // เรียกครั้งแรกทันที
+    updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
   </script>
 </body>
