@@ -29,7 +29,8 @@
       background-color: #03a96b;
       color: white;
       width: 17.16cm;
-      height: 6.27cm;
+      height: auto;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -41,6 +42,12 @@
 
     body.dark-mode .welcome-box {
       background-color: #026b4c;
+    }
+
+    .welcome-box img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
     }
 
     .main-text {
@@ -92,7 +99,7 @@
       border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+      text-decoration: none;
     }
 
     .home-menu:hover {
@@ -130,8 +137,11 @@
   <button class="toggle-button" onclick="toggleMode()">เปลี่ยนโหมด</button>
 
   <div class="welcome-box">
-    <p class="main-text">ยินดีต้อนรับสู่ระบบสารสนเทศ</p>
-    <p class="main-text">ภาคฤดูร้อน พ.ศ. 2568</p>
+    <!-- ภาพ GIF การ์ตูนพนมมือ -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG9lbnl4am45dThzdTRyaHR2N3F0bnNkbmhxb2U3bm1xOG5nOXFnbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JQqk2FVmTLjDiyuDfy/giphy.gif" alt="ผู้ชายพนมมือไหว้">
+    
+    <p class="main-text">ปิดรับงานชั่วคราว</p>
+    <p class="main-text">ขอขอบคุณทุกแรงซัพพอร์ต</p>
     <p class="update-text">updated 12 พฤษภาคม 2568</p>
   </div>
 
